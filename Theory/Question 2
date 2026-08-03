@@ -1,0 +1,201 @@
+
+#program to find the grade of a student based on marks
+from statistics import mean
+
+
+
+
+marks = int(input("enter the marks from 0-100: "))
+
+
+if marks>=75 and marks <= 100:
+   grade = "distiction"
+elif marks>=60:
+   grade = "first class"
+elif marks>=50:
+   grade = "second class"
+elif marks>=35:
+   grade = "pass"
+elif marks>=0:
+   grade = "fail"
+else:
+   grade = "invalid input"
+
+
+print(grade)
+
+
+
+
+#find the greatest number among three numbers
+a = int(input("enter the number: "))
+b = int(input("enter the number: "))
+c = int(input("enter the number: "))
+
+
+print("The largest number is:", max(a, b, c))
+print("The largest number is:", mean([a, b, c]))
+
+
+#list1 = [a, b, c]
+#list1.sort()
+#print("The largest number is:", list1[-1])
+
+
+#------------------------------------
+#to find discount on train tickets
+#First point ask user weather railway employee or not
+#for railway employee discount is 30%
+#for others user if age is less than 18 20% discount
+#elif senior citizen age is greater than 60 25% discount
+# for rest 5 % discount
+
+
+is_railway_employee = input("Are you a railway employee? (yes/no): ")
+if is_railway_employee == "yes":
+   discount = 30
+else:
+   age = int(input("Enter your age: "))
+   if age < 18:
+       discount = 20
+   elif age > 60:
+       discount = 25
+   else:
+       discount = 5
+
+
+print(f"You are eligible for a discount of {discount}%.")
+
+"""
+
+
+"""
+num = int(input("Enter a number: "))
+is_prime = True
+if num < 2:
+    is_prime = False
+else:
+    for i in range(2, num):
+        if num % i == 0:
+            is_prime = False
+            break
+if is_prime:
+    print(f"{num} is Prime")
+else:
+    print(f"{num} is Not Prime")
+
+"""
+
+
+"""n = int(input("How many terms? "))
+a, b = 0, 1
+for _ in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+print() # move to a new line at the end
+"""
+
+"""print("----- Simple Calculator -----")
+print("1. Add 2. Subtract 3. Multiply 4. Divide")
+choice = int(input("Enter your choice (1-4): "))
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+if choice == 1:
+    print(f"Result: {a + b}")
+elif choice == 2:
+    print(f"Result: {a - b}")
+elif choice == 3:
+    print(f"Result: {a * b}")
+elif choice == 4:
+    if b != 0:
+        print(f"Result: {a / b}")
+    else:
+        print("Error: Division by zero is not allowed")
+else:
+    print("Invalid choice")
+
+"""
+
+#List based programs:-
+
+#____
+# Create a heterogeneous list
+fruits = ["apple", "banana", "cherry", "date"]
+
+# Access by positive index (starts at 0)
+print(fruits[0])   # Output: apple
+
+# Access by negative index (starts from the end)
+print(fruits[-1])  # Output: date
+
+#--------------
+numbers = [1, 2, 3]
+
+# Append an item to the end
+numbers.append(4) 
+
+# Insert an item at a specific index
+numbers.insert(1, 1.5) 
+
+# Extend the list with another list merge 2 lists
+numbers.extend([5, 6])
+
+print(numbers) # Output: [1, 1.5, 2, 3, 4, 5, 6]
+
+
+#______
+
+items = ["A", "B", "C", "D", "E"]
+
+# Remove by value (deletes the first occurrence)
+items.remove("B") 
+
+# Remove and return by index (defaults to the last item)
+last_item = items.pop() 
+specific_item = items.pop(0)
+
+print(items) # Output: ['C', 'D']
+
+
+#_______
+
+scores = [45, 89, 12, 76, 23]
+
+print(max(scores)) # Largest value: 89
+print(min(scores)) # Smallest value: 12
+print(sum(scores)) # Sum of elements: 245
+print(len(scores)) # Count of elements: 5
+
+
+#______
+
+letters = ["d", "a", "c", "b"]
+
+# Create a temporary sorted copy
+print(sorted(letters)) # Output: ['a', 'b', 'c', 'd']
+
+# Reverse the list in place
+letters.reverse()
+print(letters)         # Output: ['b', 'c', 'a', 'd']
+
+
+
+#_______
+
+# Create a list of squares for even numbers only
+numbers = [1, 2, 3, 4, 5, 6]
+even_squares = [x**2 for x in numbers if x % 2 == 0]
+
+print(even_squares) # Output: [4, 16, 36]
+
+
+#_______
+
+colors = ["red", "blue", "red", "green"]
+
+# Check existence
+if "blue" in colors:
+    print("Found blue!")
+
+# Count specific elements
+print(colors.count("red")) # Output: 2
